@@ -20,14 +20,14 @@ def bigTest(tasks_runs):
     testAllRun = {}
     for task in tasks_runs:
         resultRun = 0
-        testAllRun[f'task{task}'] = {}
+        testAllRun[f'Task{task}'] = {}
         for i in range (1, 110):
-            print(f'subjetc {i} run {task}')
+            print(f'subjetc {i} task {task}')
             train(i, tasks_runs[task], task, True)
             result = predict(i, task, True)
             resultRun += result
-            testAllRun[f'task{task}'][f'Subject{i}'] = result
-        testAllRun[f'Run{task}']['meanTask'] = resultRun / 109
+            testAllRun[f'Task{task}'][f'Subject{i}'] = result
+        testAllRun[f'Task{task}']['meanTask'] = resultRun / 109
 
     with open('testAllRun.json', 'w') as json_file:
         json.dump(testAllRun, json_file, indent=4)
