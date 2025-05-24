@@ -3,7 +3,7 @@ from train import train
 from predict import predict
 from test import bigTest
 
-tasks_runs = {'1': [3, 7, 11], '2': [4, 8, 12], '3': [5, 9, 13], 4: [6, 10, 14]}
+tasks_runs = {'1': [3, 7, 11], '2': [4, 8, 12], '3': [5, 9, 13], '4': [6, 10, 14]}
 
 def main():
     try:
