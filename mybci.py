@@ -11,15 +11,15 @@ def main():
             task = sys.argv[1]
             if task not in tasks_runs:
                 raise ValueError("task must be a number between 1 and 4 (inclusive)")
-            intArgSubject = int(sys.argv[1])
+            intArgSubject = int(sys.argv[2])
             if intArgSubject < 1 or intArgSubject > 109:
                 raise ValueError("il y a seulement 109 sujet (vous devez mettre l'arg1 entre 1 et 109)")
             if sys.argv[3] != 'train' and sys.argv[3] != 'predict':
                 raise ValueError("vous devez mettre 'predict' ou 'train' comme 3eme argument")
             if sys.argv[3] == 'train':
-                train([intArgSubject], tasks_runs[task], False)
+                train(intArgSubject, tasks_runs[task], task, False)
             if sys.argv[3] == 'predict':
-                print(f"Accuracy: {predict(False)}")
+                print(f"Accuracy: {predict(intArgSubject, task, False)}")
         elif len(sys.argv) == 1:
             bigTest(tasks_runs)
         else:
